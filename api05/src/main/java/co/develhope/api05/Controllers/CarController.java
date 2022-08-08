@@ -17,13 +17,10 @@ public class CarController {
     }
 
     @PostMapping("/echo")
-    public CarDto postNewCar(@Valid @RequestBody CarDto car, HttpServletResponse response) {
+    public String postNewCar(@Valid @RequestBody CarDto car, HttpServletResponse response) {
         System.out.println(car);
         if (response.getStatus() == 200)
-        System.out.println("Success");
-        else System.out.println("Not good"); {
-
-        } ;
-        return car;
+            return "Success";
+        else return "Not good";
     }
 }
